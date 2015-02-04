@@ -1,10 +1,5 @@
 module ApplicationHelper
 	def current_user
-  	session[:user_id] ? User.find(session[:user_id]) :nil
-  	# if session[:user_id]
-  	# 	User.find(session[:user_id])
-  	# else
-  	# 	nil
-  	# end
+		session[:user_id] ? User.find(session[:user_id]) :nil
+  	end
   end
-end

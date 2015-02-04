@@ -8,7 +8,7 @@ end
 def create
 	@post = Post.find(params[:post_id])
   	@comment = @post.comments.create(comment_params)
-  	@comment.user = user.id
+  	@comment.user = current_user
   	if @comment.save
     	redirect_to @post
   	else
@@ -17,9 +17,25 @@ def create
 end
 
   def edit
+    @comment = Comment.find(params[:id])
+    @post = @comment.post
+    @comment.user = current_user
+  end
+
+  def update
+    @post=Post.find(params[:post_id])
+    @comment.update(comment_params)
+    redirect_to post_path(@post), notice: "Comment successfully updated."
   end
 
   def show
+  end
+
+  def destroy
+    @post=Post.find(params[:post_id])
+    @comment=@post.comments.find(params[:id])
+    @comment.destroy
+    redirect_to post_path(@post)
   end
 
   private

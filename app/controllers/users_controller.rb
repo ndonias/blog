@@ -22,7 +22,8 @@ class UsersController < ApplicationController
 
   def destroy
   	@user.destroy
-  	redirect_to users_path, notice: "User deleted."
+    session[:user_id]=nil
+  	redirect_to users_path, notice: "User logged out and deleted."
   end
 
   def update

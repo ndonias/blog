@@ -1,19 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'comments/new'
-
-  get 'comments/edit'
-
-  get 'comments/show'
-
-  get 'sessions/create'
-
-  get 'sessions/destroy'
-
   resources :users
   
+  #resources :comments
   resources :posts do
-    resources :comments, shallow: true
+    resources :comments
   end
 
 
