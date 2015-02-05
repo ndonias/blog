@@ -6,10 +6,17 @@
 	</p>
 <% else %>
 	<%= form_tag(signin_path, method: :post) do %>
-		<%= label_tag :email %>
-		<%= email_field_tag :email %>
-		<%= label_tag :password %>
-		<%= password_field_tag :password %>
-		<%= submit_tag "login" %>
+		<form role="form" class="form-inline">
+			<h4>Please Log In</h4>
+			<div class="form-group">
+				<%= label_tag :email %>
+				<%= email_field_tag :email %>
+			</div>
+			<div class="form-group">
+				<%= label_tag :password %>
+				<%= password_field_tag :password %>
+			</div>
+				<%= submit_tag "login" %>
+	</form>
 	<% end %>
 <% end %>
