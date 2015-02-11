@@ -1,5 +1,21 @@
 Rails.application.routes.draw do
 
+  get 'stories/index'
+
+  get 'followers/index'
+
+  get 'followers/new'
+
+  get 'followers/create'
+
+  get 'followers/update'
+
+  get 'followers/destroy'
+
+  get 'followers/edit'
+
+  get 'followers/show'
+
   resources :users
   
   #resources :comments
@@ -14,7 +30,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'users#index'
+  root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

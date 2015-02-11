@@ -1,16 +1,5 @@
 <h1>Welcome to Post Home</h1>
 
-<% @post.each do |post| %>
-
-<ul>
-	<li>
-		<%= link_to post.title, post_path(post) %>
-		
-		<% if current_user==post.user %>
-		<%= link_to 'edit', edit_post_path(post)%>
-		<%= link_to 'delete', post_path(post), method: :delete,
-		data: {confirm: "Are you sure?"} %>
-		<%end%>
-	</li>
-	<%end%>
+<ul style="list-style: none;">
+		<%= render @post %>
 </ul>
