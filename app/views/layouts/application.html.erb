@@ -1,32 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Happy Blog</title>
+  <title>Healthy Eats</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<div id="main-container" class="container">
-      <div class="row">
-        <div class="col-xs-9">
-          <h1>Happy Blog!</h1>
-        </div>
-        <div class="col-xs-9">
-
-<nav class="navbar navbar-default" role="navigation">
-	<div class="container">
-		<div class="navbar-header">
+<nav>
+<h1>Food Blog</h1>
 			<%=render 'share/login'%> <%= link_to 'Home', '/' %>
 			| <%= link_to 'Posts', posts_path %>
 			| <%= link_to 'New User?', new_user_path %>
-		</div>
-	</div>
 </nav>
 <% flash.each do |name, msg| -%>
   <%= content_tag :div, msg, class: "alert alert-#{name}" %>
-<% end -%>
+<% end %>
 	
 
 
